@@ -1,0 +1,192 @@
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_w48_192_p4_b4.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_w48_192_p2_b12.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_tph_192_p4_b4_2.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_tph_192_p2_b12.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_hrt_288_p2_b4.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_coco_hrt_192_p2_b12.yaml
+
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_crowdpose_w48_192_p4_b4.yaml
+torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer_ochuman_w48_192_p3_b8.yaml
+
+
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_crowdpose_hrt_192_p4_b4_e120.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_crowdpose_hrt_192_p4_b4_my.yaml
+
+
+# 原先用的post,这次改用pre看能不能堆上去
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph6_192_p2_b12_window_pre.yaml
+# 1. HRFormer在CrowdPose上的增量:
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p4_b4_window.yaml
+
+# 2. Debug看again炸不炸，不炸再跑again_window
+# experiments/coco/interformer/interformer_288_p2_b4_again.yaml
+# experiments/coco/interformer/interformer_288_p2_b4_again_window.yaml
+# again_window不炸就跑这个:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_288_p2_b4_again_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_288_p2_b4_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p2_b12_window.yaml
+
+# COCO tranpose 增量实验
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph6_192_p2_b12_window.yaml
+
+
+
+# CrowdPose HRFormer+InterFormer实验:
+# 1. kill -> interformer_hrt_192_p3_b6
+# 2. 代替下面的跑:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p6_b4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p6_b3.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p3_b6.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p4_b4.yaml
+
+# COCO:
+# torchrun --nproc_per_node=2 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph6_192_p2_b12_my.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph6_192_p3_b8_my.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph6_192_p4_b6_my.yaml
+
+
+# CrowdPose HRFormer+InterFormer实验:
+# 一:
+# 下载Base model https://github.com/leijue222/InterFormer/releases/download/HRFormer/hrt_base_crowdpose_256x192.pth
+# 放在 InterFormer/models/pytorch/hrformer/ 目录下
+# 二:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p3_b8.yaml
+
+# Ablation 三个小数据集实验:
+
+# 一:
+# 下载Base model https://github.com/leijue222/InterFormer/releases/download/HRFormer/hrt_base_ochuman_256x192.pth
+# 放在 InterFormer/models/pytorch/hrformer/ 目录下
+
+# 二:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_hrt_192_p3_b8+pe_g.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_hrt_192_p3_b8+pe_s.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_hrt_192_p3_b8+ms+pe.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p4_b4_window.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p3_b8_my.yaml
+
+# 卡够的话下面两个配置也跑吧，主要是patch和batch size的不同，不确定哪个效果最好
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p4_b6_my.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p2_b12_my.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p2_b2_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_hrt_192_p2_b2_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_hrt_288_p2_b2_window.yaml
+
+# TransPose 4 + InterFormer 2
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p2_b12.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_tph_192_p3_b8.yaml
+
+# 测试patch N数目的影响（取临近N人）:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p8_b4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p6_b4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p1_b4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p2_b4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p4_b4.yaml
+
+# 测试随机抽取4人:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_tph_192_p4_b4_random.yaml
+
+# 昨天炸了的实验重配,即HRFormer base + InterFormer on CrowdPose:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p2_b10.yaml
+
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_p5_b4.yaml
+# 下载模型https://github.com/leijue222/InterFormer/releases/download/singleFormer/transposeH_ochuman_en4.pth
+# 放置到目录下: 'InterFormer/models/pytorch/interformer_ochuman/single/transposeH_ochuman_en4.pth'
+
+# 训练:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p2_ochuman_attn_dft.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p4_ochuman_attn_dft.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p2_ochuman_attn_dft_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p3_ochuman_attn_dft_window.yaml
+
+# 1. 安装 OCHumanApi
+# git clone https://github.com/liruilong940607/OCHumanAp
+# cd OCHumanApi
+# make install
+# 2. 下载OCHuman数据集并放解压至相应目录下
+# https://drive.google.com/u/0/uc?export=download&confirm=5M69&id=10hJ2OPWTlpfcnKGlj3MTirEC8L9AhEce
+# 如果不能下载则打开（https://drive.google.com/file/d/10hJ2OPWTlpfcnKGlj3MTirEC8L9AhEce/view?usp=sharing）此链接手动下载
+# 3. run:
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer/interformer_hrt_192_b3_p8_en2.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p3_ochuman_attn_dft_p2.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p3_ochuman_attn_dft_p4.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p3_ochuman_attn_dft_p2_window.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/OCHuman/interformer/interformer_p3_ochuman_attn_dft_p3_window.yaml
+
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p2_b12.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p3_b8.yaml
+
+# CUDA_VISIBLE_DEVICES=1 python tools/train.py --cfg experiments/OCHuman/interformer/interformer_p3_hrt_288_catpos.yaml
+# CUDA_VISIBLE_DEVICES=0 python tools/train.py --cfg experiments/OCHuman/interformer/interformer_p3_hrt_288_catpos_nope.yaml
+
+
+# COCO数据集
+# #    1. 高分辨率：
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_288_p2_b4.yaml
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_288_p4_b2.yaml
+# #    2. COCO Ablation study
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p5.yaml
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p5_nope.yaml
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p5_noms.yaml
+#       torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer/interformer_192_p5_noms_nope.yaml
+
+
+
+
+# # [2021/12/23] Note: 
+# # 1. requirement.txt 中已经新增了一个环境要求，用于适应HRFormer将哦哦：
+# pip install mmcv timm einops
+# # 2. 下载 hrformer 模型： 
+# https://github.com/leijue222/InterFormer/releases/download/HRFormer/hrt_base_coco_256x192.pth
+# https://github.com/leijue222/InterFormer/releases/download/HRFormer/hrt_base_coco_384x288.pth
+# # 3. 放到路径: InterFormer/models/pytorch/hrformer/ 里面
+
+# # COCO数据集
+#     # 实验一：测试InterFormer对HRFormer的改进（finetune训练）
+# 54  torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer192_finetune_notrans.yaml
+# 炸  torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans.yaml
+
+#     # 实验二：COCO数据集训练InterFormer 4+2层的情况
+# 100 torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/IF_finetune_en4_en2_p5.yaml
+# 103 √ torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/IF_finetune_en4_en2_p5_nope.yaml
+
+#     # 实验三：InterFormer在CoCoMini下train纯多人架构的情况（去除单人）
+#     torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_pureMulti/cocomini_en6.yaml
+
+
+# # CrowdPose数据集
+#     # 实验一：CrowPose数据集训练 4+2结构, 并消融对比不加监督和position
+      # TransPose仓库在CrowPose上训练en4(228)， en3(233)
+      # 把单人模型移动到该仓库：
+      # 在Transpose仓库下执行mv命令：
+      # mv output/crowdpose/transpose_h/H0_en4/model_best.pth /v-zhenyi/InterFormer/models/pytorch/interformer_crowdpose/single/crowdpose_h0_en4.pth
+      # mv output/crowdpose/transpose_h/H0_en3/model_best.pth /v-zhenyi/InterFormer/models/pytorch/interformer_crowdpose/single/crowdpose_h0_en3.pth
+
+      # torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_2stage/2stage_finetune_en4_en2.yaml
+      # torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_2stage/2stage_finetune_en4_en2_nope.yaml
+      # torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_2stage/2stage_finetune_en4_en2_noms_nope.yaml
+
+#     # 实验二：InterFormer在该数据集下train纯多人架构的情况（去除单人）
+#     √ torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_pureMulti/crowdpose_en6.yaml
+
+# [2021/12/25]
+# hrformer 288 2stage finetune 原先配置会显存爆炸，改成以下两个实验：(高分辨率全炸)
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b1_p5.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b2_p3.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b1_p3.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b2_p2.yaml
+
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/crowdpose/interformer_2stage/2stage_finetune_en4_en2.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer192_finetune_notrans.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b3_p3.yaml
+# torchrun --nproc_per_node=8 tools/ddp_train.py --cfg experiments/coco/interformer_2stage/2stage_hrformer288_finetune_notrans_b2_p4.yaml

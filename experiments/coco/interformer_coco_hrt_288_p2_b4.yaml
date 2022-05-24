@@ -1,0 +1,150 @@
+AUTO_RESUME: true
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+DATA_DIR: ''
+GPUS: (0,)
+OUTPUT_DIR: 'output'
+LOG_DIR: 'log'
+WORKERS: 8
+PRINT_FREQ: 100
+
+DATASET:
+  COLOR_RGB: true
+  DATASET: 'coco'
+  DATA_FORMAT: jpg
+  FLIP: true
+  NUM_JOINTS_HALF_BODY: 8
+  PROB_HALF_BODY: 0.3 
+  # ROOT: '/media/yiwei/yiwei-01/datasets/pose/coco/'
+  ROOT: '/mnt/sda2/datasets/coco/'
+  # ROOT: '../MutiTransPose/data/coco/'
+  ROT_FACTOR: 45
+  SCALE_FACTOR: 0.35
+  TEST_SET: 'val2017'
+  TRAIN_SET: 'train2017'
+  MAX_PATCH: 2
+  USE_COCOMINI: false
+MODEL:
+  # Transformer Encoder
+  ATTENTION_TYPE: 'default'
+  MULTI_POS_EMBEDDING: 'res'
+  UPSAMPLE_TYPE: 'deconv'
+  DIM_MODEL: 78
+  DIM_FEEDFORWARD: 192
+  N_HEAD: 1
+  HRNET_RES_LAYER: 0
+  ENCODER_LAYERS: 6
+  ENCODER_MULTI_LAYERS: 2
+  ATTENTION_ACTIVATION: relu
+  POS_EMBEDDING: sine
+  MULTI_POS_EMBEDDING_DIM: 96
+  USE_MULTI_POS: false
+  INTER_SUPERVISION: true
+  # #
+  INIT_WEIGHTS: true
+  END2END: false
+  SINGLEFORMER_FIX: false
+  NAME: interformer
+  SINGLEFORMER: hrformer
+  SINGLE_MODEL: 'models/base/hrformer/hrt_base_coco_384x288.pth'
+  NUM_JOINTS: 17
+  PRETRAINED: 'models/base/imagenet/hrt_base_imagenet_pretrained_top1_828.pth'
+  TARGET_TYPE: gaussian
+  IMAGE_SIZE:
+  - 288
+  - 384
+  HEATMAP_SIZE:
+  - 72
+  - 96
+  TRANS_SIZE:
+  - 9
+  - 12
+  SIGMA: 2
+  EXTRA:
+    DECONV_WITH_BIAS: false
+    NUM_DECONV_LAYERS: 1
+    NUM_DECONV_FILTERS:
+    - 78
+    NUM_DECONV_KERNELS:
+    - 4
+    PRETRAINED_LAYERS:
+    - 'conv1'
+    - 'bn1'
+    - 'conv2'
+    - 'bn2'
+    - 'layer1'
+    - 'transition1'
+    - 'stage2'
+    - 'transition2'
+    - 'stage3'
+    FINAL_CONV_KERNEL: 1
+    STAGE2:
+      NUM_MODULES: 1
+      NUM_BRANCHES: 2
+      BLOCK: BASIC
+      NUM_BLOCKS:
+      - 4
+      - 4
+      NUM_CHANNELS:
+      - 48
+      - 96
+      FUSE_METHOD: SUM
+    STAGE3:
+      NUM_MODULES: 4
+      NUM_BRANCHES: 3
+      BLOCK: BASIC
+      NUM_BLOCKS:
+      - 4
+      - 4
+      - 4
+      NUM_CHANNELS:
+      - 48
+      - 96
+      - 192
+      FUSE_METHOD: SUM
+LOSS:
+  USE_TARGET_WEIGHT: true
+TRAIN:
+  BATCH_SIZE_PER_GPU: 4 # 1
+  SHUFFLE: true
+  BEGIN_EPOCH: 0
+  END_EPOCH: 240
+  LR: 0.0001  # Initial learning rate
+  LR_END: 0.00001  # Final learning rate
+  LR_FACTOR: 0.25  # for MultiStepLR
+  LR_STEP:  # for MultiStepLR
+  - 50
+  - 100
+  - 150
+  - 200
+  WD: 0.1
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  MOMENTUM: 0.9
+  NESTEROV: false
+TEST:
+  BLUR_KERNEL: 11
+  BATCH_SIZE_PER_GPU: 32 # 6
+  # 'data/coco/person_detection_results/COCO_test-dev2017_detections_AP_H_609_person.json'
+  # 'data/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json'
+  COCO_BBOX_FILE: '/mnt/sda2/datasets/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json'
+  # COCO_BBOX_FILE: '/media/yiwei/yiwei-01/datasets/pose/coco/person_detection_results/COCO_val2017_detections_AP_H_56_person.json'
+  BBOX_THRE: 1.0
+  IMAGE_THRE: 0.0
+  IN_VIS_THRE: 0.2
+  MODEL_FILE: models/interformer/coco/interformer_coco_hrt_288_p2_b4.pth
+  NMS_THRE: 1.0
+  OKS_THRE: 0.9
+  USE_GT_BBOX: true
+  FLIP_TEST: true
+  POST_PROCESS: true
+  SHIFT_HEATMAP: true
+  DETAIL_EVAL: false
+DEBUG:
+  DEBUG: false
+  SAVE_BATCH_IMAGES_GT: true
+  SAVE_BATCH_IMAGES_PRED: true
+  SAVE_HEATMAPS_GT: true
+  SAVE_HEATMAPS_PRED: true

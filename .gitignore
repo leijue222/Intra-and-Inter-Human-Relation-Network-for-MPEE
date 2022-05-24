@@ -1,0 +1,16 @@
+/__pycache__
+**/__pycache__/
+**/**/__pycache__/
+**/**/**/__pycache__/
+**/**/**/**/__pycache__/
+**/**/**/**/**/__pycache__/
+/images
+/models
+/log
+/output
+/.vscode
+/att_map
+/yaml_backup
+/backup
+# cd lib and make (generate by yourself)
+*.so

@@ -1,0 +1,17 @@
+pycocotools
+EasyDict==1.7
+opencv-python
+shapely
+Cython
+scipy
+pandas
+pyyaml
+pylsy
+json_tricks
+scikit-image
+yacs>=0.1.5
+tensorboard
+tensorboardX
+mmcv
+einops
+timm

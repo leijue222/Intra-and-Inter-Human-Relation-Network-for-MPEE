@@ -75,13 +75,13 @@ This code repository for the paper:
    ```
 ### Pretrained Models
 
-Download pretrained models from our [Model Zoo]([https://github.com/leijue222/InterFormer/releases](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE#model-zoo))
+Download pretrained models from our [Model Zoo](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE#model-zoo).
 
 ### Data Preparation
 
 #### CrowPose dataset
 
-Downloaded from [Here](https://github.com/Jeff-sjtu/CrowdPose#Dataset)
+Downloaded images from [here](https://github.com/Jeff-sjtu/CrowdPose#Dataset), json file can also download from [here](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/tag/json).
 ```txt
 ${POSE_ROOT}/data/crowdpose/
 |-- json
@@ -96,7 +96,7 @@ ${POSE_ROOT}/data/crowdpose/
 
 #### OCHuman dataset
 
-Downloaded from [Here](https://drive.google.com/file/d/10hJ2OPWTlpfcnKGlj3MTirEC8L9AhEce/view?usp=sharing)
+Downloaded images from [here](https://drive.google.com/file/d/10hJ2OPWTlpfcnKGlj3MTirEC8L9AhEce/view?usp=sharing), json file can also download from [here](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/tag/json).
 ```txt
 ${POSE_ROOT}/data/crowdpose/
 |-- ochuman_coco_format_val_range_0.00_1.00

@@ -1,7 +1,7 @@
 ## Introduction:
 
 This code repository for the paper:  
-**I^2R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation**  
+**I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation**  
 [Yiwei Ding, Wenjin Deng, Yinglin Zheng, Pengfei Liu, Meihong Wang, Xuan Cheng, Jianmin Bao, Dong Chen, Ming Zeng]  
 
 ![teaser](figs/pipeline.png)
@@ -14,28 +14,28 @@ This code repository for the paper:
 
 |     Model      | Input size |  AP    | Ap .5 | AP .75 |  AR    | AR .5  | AR .75 | AP easy | AP medium | AP hard | Download | Log |
 | :------------: | :--------: |  ----- | ----- | :----: | :----: | :----: | :----: | :-----: | :-------: | :-----: | :------: | --- |
-| I2R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.723 | 0.924 | 0.779  | 0.765  | 0.932 | 0.819 | 0.799 | 0.732  | 0.628 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_w48_pure_en6.pth) | [log](#) |
-| I2R-Net (1st stage:TransPose-H) |  256x192  | 0.763 | 0.935 | 0.822  | 0.791  | 0.940 | 0.844 | 0.832 | 0.770  | 0.674 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_tph_192_p6_b4.pth) | [log](#) |
-| I2R-Net (1st stage:HRFormer-B) |  256x192  | 0.774 | 0.936 | 0.833  | 0.803  | 0.945 | 0.855 | 0.838 | 0.781  | 0.693 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_hrt_192_p4_b4.pth) | [log](#) |
+| I²R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.723 | 0.924 | 0.779  | 0.765  | 0.932 | 0.819 | 0.799 | 0.732  | 0.628 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_w48_pure_en6.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_crowdpose_w48_pure_en6_2022-05-23-21-23.log) |
+| I²R-Net (1st stage:TransPose-H) |  256x192  | 0.763 | 0.935 | 0.822  | 0.791  | 0.940 | 0.844 | 0.832 | 0.770  | 0.674 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_tph_192_p6_b4.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_crowdpose_tph_192_p6_b4_2022-05-23-21-12.log) |
+| I²R-Net (1st stage:HRFormer-B) |  256x192  | 0.774 | 0.936 | 0.833  | 0.803  | 0.945 | 0.855 | 0.838 | 0.781  | 0.693 | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_crowdpose_hrt_192_p4_b4.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_crowdpose_hrt_192_p4_b4_e120_2022-05-23-21-11.log) |
 
 
 ### Results on OCHuman valiadation set
 
 |     Model      | Input size |  AP    | Ap .5 | AP .75 | Download | Log |
 | :------------: | :--------: |  ----- | ----- | :----: | :------: | --- |
-| I2R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.643 | 0.850 | 0.692  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_w48_pure_en6.pth) | [log](#) |
-| I2R-Net (1st stage:TransPose-H) |  256x192  | 0.665 | 0.838 | 0.714  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_tph_192_p3_b8.pth) | [log](#) |
-| I2R-Net (1st stage:HRFormer-B) |  256x192  | 0.678 | 0.850 | 0.728  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_hrt_192_p3_b8.pth) | [log](#) |
+| I²R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.643 | 0.850 | 0.692  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_w48_pure_en6.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_ochuman_w48_pure_en6_2022-05-23-20-34.log) |
+| I²R-Net (1st stage:TransPose-H) |  256x192  | 0.665 | 0.838 | 0.714  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_tph_192_p3_b8.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_ochuman_tph_192_p3_b8_2022-05-23-20-35.log) |
+| I²R-Net (1st stage:HRFormer-B) |  256x192  | 0.678 | 0.850 | 0.728  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_ochuman_hrt_192_p3_b8.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_True_valid_interformer_ochuman_hrt_192_p3_b8_2022-05-23-20-37.log) |
 
 
 ### Results on COCO val2017 with detector
 
 |     Model      | Input size |  AP    | Ap .5 | AP .75 | AP (M) | AP (L) |  AR   | AR (M) | AR (L) | Download | Log |
 | :------------: | :--------: |  ----- | ----- | :----: | :----: | :----: | :---: | :----: | :----: | :------: | --- |
-| I2R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.753 | 0.902 | 0.819  | 0.717  | 0.824  | 0.805 | 0.761  | 0.868  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_w48_pure_en6.pth) | [log](#) |
-| I2R-Net (1st stage:TransPose-H) |  256x192  | 0.758 | 0.904 | 0.821  | 0.720  | 0.829  | 0.809 | 0.766  | 0.873  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_tph_192_p4_b4.pth) | [log](#) |
-| I2R-Net (1st stage:HRFormer-B) |  256x192  | 0.764 | 0.908 | 0.832  | 0.723  | 0.837  | 0.814 | 0.769  | 0.881  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_hrt_192_p2_b12.pth) | [log](#) |
-| I2R-Net (1st stage:HRFormer-B) |  384x288  | 0.773 | 0.910 | 0.836  | 0.730  | 0.845  | 0.821 | 0.777  | 0.886  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_hrt_288_p2_b4.pth) | [log](#) |
+| I²R-Net (Vanilla version, 1st stage:HRNet-W48-S) |  256x192  | 0.753 | 0.902 | 0.819  | 0.717  | 0.824  | 0.805 | 0.761  | 0.868  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_w48_pure_en6.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_False_valid_interformer_coco_w48_pure_en6_2022-05-23-21-43.log) |
+| I²R-Net (1st stage:TransPose-H) |  256x192  | 0.758 | 0.904 | 0.821  | 0.720  | 0.829  | 0.809 | 0.766  | 0.873  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_tph_192_p4_b4.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_False_valid_interformer_coco_tph_192_p4_b4_2022-05-23-21-42.log) |
+| I²R-Net (1st stage:HRFormer-B) |  256x192  | 0.764 | 0.908 | 0.832  | 0.723  | 0.837  | 0.814 | 0.769  | 0.881  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_hrt_192_p2_b12.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_False_valid_interformer_coco_hrt_192_p2_b12_2022-05-23-21-59.log) |
+| I²R-Net (1st stage:HRFormer-B) |  384x288  | 0.773 | 0.910 | 0.836  | 0.730  | 0.845  | 0.821 | 0.777  | 0.886  | [model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/models/interformer_coco_hrt_288_p2_b4.pth) | [log](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/download/logs/GT_False_valid_interformer_coco_hrt_288_p2_b4_2022-05-23-22-33.log) |
 
 
 We will update the codes and models soon.

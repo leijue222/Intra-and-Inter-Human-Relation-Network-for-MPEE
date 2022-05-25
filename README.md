@@ -171,4 +171,3 @@ Great thanks for these papers and their open-source codes：[HRNet](https://gith
 ## Citation
 If you use our code or models in your research, please cite with:
 
-We will update the codes and models soon.

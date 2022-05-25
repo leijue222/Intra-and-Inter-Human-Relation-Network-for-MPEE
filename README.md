@@ -44,7 +44,7 @@ This code repository for the paper:
 1. Clone this repository, and we'll call the directory that you cloned as ${POSE_ROOT}
 
    ```bash
-   git clone https://github.com/leijue222/InterFormer.git
+   git https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE.git
    ```
 
 2. Install **Python=3.8 and PyTorch=1.10** from the PyTorch [official website](https://pytorch.org/get-started/locally/)

@@ -1,8 +1,7 @@
 ## Introduction:
 
 This code repository for the paper:  
-**I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation**  
-[Yiwei Ding, Wenjin Deng, Yinglin Zheng, Pengfei Liu, Meihong Wang, Xuan Cheng, Jianmin Bao, Dong Chen, Ming Zeng]  
+[**I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation**](https://arxiv.org/pdf/2206.10892.pdf) 
 
 ![teaser](figs/pipeline.png)
 

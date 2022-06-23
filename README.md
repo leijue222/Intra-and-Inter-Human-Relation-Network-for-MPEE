@@ -171,7 +171,7 @@ Great thanks for these papers and their open-source codes：[HRNet](https://gith
 ## Citation
 If you use our code or models in your research, please cite with:
 ```
-@article{ding2021I^2Rl,
+@article{ding2022I^2Rl,
   title={I^2R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation},
   author={Ding, Yiwei and Deng, Wenjin and Zheng, Yinglin and Liu, Pengfei and Wang, Meihong and Cheng, Xuan and Bao, Jianmin and Chen, Dong and Zeng, Ming},
   journal={arXiv preprint arXiv:2206.10892

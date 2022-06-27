@@ -1,7 +1,9 @@
-## Introduction:
+<h1 align="left">I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation<a href="https://arxiv.org/pdf/2206.10892"><img src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
 
-This code repository for the paper:  
-[**I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation**](https://arxiv.org/pdf/2206.10892.pdf) 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/i-2r-net-intra-and-inter-human-relation/pose-estimation-on-coco)](https://paperswithcode.com/sota/pose-estimation-on-coco?p=i-2r-net-intra-and-inter-human-relation)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/i-2r-net-intra-and-inter-human-relation/multi-person-pose-estimation-on-crowdpose)](https://paperswithcode.com/sota/multi-person-pose-estimation-on-crowdpose?p=i-2r-net-intra-and-inter-human-relation)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/i-2r-net-intra-and-inter-human-relation/multi-person-pose-estimation-on-ochuman)](https://paperswithcode.com/sota/multi-person-pose-estimation-on-ochuman?p=i-2r-net-intra-and-inter-human-relation)
+
 
 ![teaser](figs/pipeline.png)
 
@@ -170,11 +172,12 @@ Great thanks for these papers and their open-source codes：[HRNet](https://gith
 ## Citation
 If you use our code or models in your research, please cite with:
 ```
-@article{ding2022I^2Rl,
-  title={I^2R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation},
-  author={Ding, Yiwei and Deng, Wenjin and Zheng, Yinglin and Liu, Pengfei and Wang, Meihong and Cheng, Xuan and Bao, Jianmin and Chen, Dong and Zeng, Ming},
-  journal={arXiv preprint arXiv:2206.10892
-},
-  year={2022}
+@misc{https://doi.org/10.48550/arxiv.2206.10892,
+  doi = {10.48550/ARXIV.2206.10892},
+  url = {https://arxiv.org/abs/2206.10892},
+  author = {Ding, Yiwei and Deng, Wenjin and Zheng, Yinglin and Liu, Pengfei and Wang, Meihong and Cheng, Xuan and Bao, Jianmin and Chen, Dong and Zeng, Ming},
+  title = {I^2R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation},
+  publisher = {arXiv},
+  year = {2022},
 }
 ```

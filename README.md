@@ -1,4 +1,4 @@
-<h1 align="left">I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation<a href="https://arxiv.org/pdf/2206.10892"><img src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
+<h1 align="left">I²R-Net: Intra- and Inter-Human Relation Network for Multi-Person Pose Estimation<a href="https://arxiv.org/abs/2206.10892"><img src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/i-2r-net-intra-and-inter-human-relation/pose-estimation-on-coco)](https://paperswithcode.com/sota/pose-estimation-on-coco?p=i-2r-net-intra-and-inter-human-relation)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/i-2r-net-intra-and-inter-human-relation/multi-person-pose-estimation-on-crowdpose)](https://paperswithcode.com/sota/multi-person-pose-estimation-on-crowdpose?p=i-2r-net-intra-and-inter-human-relation)

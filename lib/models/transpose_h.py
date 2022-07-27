@@ -688,20 +688,21 @@ class TransPoseH(nn.Module):
             raise ValueError('{} is not exist!'.format(pretrained))
 
 
-def get_pose_net(cfg, pretrained_path, is_end2end, **kwargs):
+def get_pose_net(cfg, is_train, pretrained_path, is_end2end, **kwargs):
     model = TransPoseH(cfg, **kwargs)
 
-    if is_end2end:
-        # load backbone
-        model.init_weights(cfg['MODEL']['PRETRAINED'])
-        logger.info("=> end2end training loaded backbone '{}' ".format(pretrained_path))
-    else:
-        # load backbone and singleformer
-        ckpt_state_dict = torch.load(pretrained_path, map_location=torch.device('cpu'))
-        # singleFormer训练模型多了反卷积的参数，此处无，所以strict设为False
-        model.load_state_dict(ckpt_state_dict, strict=False)
-        logger.info("=> two_stage training loaded checkpoint '{}' (frozen first {})".format(pretrained_path, cfg['MODEL']['SINGLEFORMER_FIX']))
-        if cfg['MODEL']['SINGLEFORMER_FIX']:
-            model.requires_grad_(False)
+    if is_train:
+        if is_end2end:
+            # load backbone
+            model.init_weights(cfg['MODEL']['PRETRAINED'])
+            logger.info("=> end2end training loaded backbone '{}' ".format(pretrained_path))
+        else:
+            # load backbone and singleformer
+            ckpt_state_dict = torch.load(pretrained_path, map_location=torch.device('cpu'))
+            # singleFormer训练模型多了反卷积的参数，此处无，所以strict设为False
+            model.load_state_dict(ckpt_state_dict, strict=False)
+            logger.info("=> two_stage training loaded checkpoint '{}' (frozen first {})".format(pretrained_path, cfg['MODEL']['SINGLEFORMER_FIX']))
+            if cfg['MODEL']['SINGLEFORMER_FIX']:
+                model.requires_grad_(False)
         
     return model

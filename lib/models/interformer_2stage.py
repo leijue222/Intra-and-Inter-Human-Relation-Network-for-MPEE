@@ -423,10 +423,10 @@ class InterFormer(nn.Module):
             return outputs['multi']
 
 
-def get_pose_net(cfg, **kwargs):
+def get_pose_net(cfg, is_train, **kwargs):
 
     singleformer = eval('models.'+cfg.MODEL.SINGLEFORMER+'.get_pose_net')(
-        cfg, cfg.MODEL.SINGLE_MODEL, cfg.MODEL.END2END
+        cfg, is_train, cfg.MODEL.SINGLE_MODEL, cfg.MODEL.END2END
     )
 
     model = InterFormer(cfg, singleformer, **kwargs)

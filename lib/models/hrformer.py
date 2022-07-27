@@ -2484,7 +2484,7 @@ class HRFormer(nn.Module):
 # out = hrformer(img)
 # print(out.shape)
 
-def get_pose_net(cfg, model_path, e2e_flag):
+def get_pose_net(cfg, is_train, model_path, e2e_flag):
     
     extra=dict(
         drop_path_rate=0.2,
@@ -2526,7 +2526,8 @@ def get_pose_net(cfg, model_path, e2e_flag):
     
     hrformer=HRFormer(extra,78,cfg.MODEL.NUM_JOINTS,0)
     
-    load_hrformer_checkpoint(hrformer, model_path)
+    if is_train:
+        load_hrformer_checkpoint(hrformer, model_path)
     
     logger.info('=> loading hrformer pretrained model {}'.format(model_path))
     return hrformer

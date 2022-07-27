@@ -129,7 +129,7 @@ class DeConv(nn.Module):
 
 class InterFormer(nn.Module):
 
-    def __init__(self, cfg, **kwargs):
+    def __init__(self, cfg, is_train, **kwargs):
         super(InterFormer, self).__init__()
         extra = cfg.MODEL.EXTRA
         
@@ -137,7 +137,7 @@ class InterFormer(nn.Module):
         
         if self.have_singleformer:
             self.singleformer = eval('models.'+cfg.MODEL.SINGLEFORMER+'.get_pose_net')(
-                cfg, cfg.MODEL.SINGLE_MODEL, cfg.MODEL.END2END
+                cfg, is_train, cfg.MODEL.SINGLE_MODEL, cfg.MODEL.END2END
             )
         else:
             self.backbone = build_backbone(cfg)
@@ -323,8 +323,8 @@ class InterFormer(nn.Module):
             return outputs['multi']
 
 
-def get_pose_net(cfg, **kwargs):
+def get_pose_net(cfg, is_train, **kwargs):
 
-    model = InterFormer(cfg, **kwargs)
+    model = InterFormer(cfg, is_train, **kwargs)
 
     return model

@@ -45,7 +45,7 @@ MODEL:
   SINGLEFORMER_FIX: false
   NAME: interformer
   SINGLEFORMER: hrformer
-  SINGLE_MODEL: 'models/base/hrformer/hrt_base_crowdpose_256x192_e120_nopre.pth'
+  SINGLE_MODEL: 'models/base/hrformer/hrt_base_crowdpose_256x192.pth'
   LOSS_WEIGHTS:
   - 0.5
   - 0.5

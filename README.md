@@ -76,24 +76,10 @@
    ```
 ### Pretrained Models
 
-Download pretrained models from our [Model Zoo](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE#model-zoo).
+- Download [Intra Relation model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/tag/intramodel).
 
-```
-${POSE_ROOT}/models/
-`-- crowdpose
-	|-- interformer_crowdpose_w48_pure_en6.pth
-	|-- interformer_crowdpose_tph_192_p6_b4.pth
-	|-- interformer_crowdpose_hrt_192_p4_b4.pth
-`-- ochuman
-	|-- interformer_ochuman_w48_pure_en6.pth
-	|-- interformer_ochuman_tph_192_p3_b8.pth
-	|-- interformer_ochuman_hrt_192_p3_b8.pth
-`-- coco
-	|-- interformer_coco_w48_pure_en6.pth
-	|-- interformer_coco_tph_192_p4_b4.pth
-	|-- interformer_coco_hrt_192_p2_b12.pth
-	|-- interformer_coco_hrt_288_p2_b4.pth
-```
+- Download [Inter Relation model](https://github.com/leijue222/Intra-and-Inter-Human-Relation-Network-for-MPEE/releases/tag/models).
+
 
 ### Data Preparation
 
